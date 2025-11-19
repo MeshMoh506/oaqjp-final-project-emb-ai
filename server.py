@@ -17,6 +17,10 @@ def emotionDetector():
     # Call emotion detector function
     result = emotion_detector(text_to_analyse)
     
+    # Handle invalid input (dominant_emotion = None)
+    if result["dominant_emotion"] is None:
+        return "Invalid text! Please try again!"
+    
     # Format response string
     response_text = (
         f"For the given statement, the system response is "
